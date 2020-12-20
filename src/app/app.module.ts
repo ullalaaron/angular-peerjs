@@ -10,6 +10,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from "@angular/material/form-field"
 import { MatInputModule } from "@angular/material/input"
 import { FormsModule } from '@angular/forms';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    ClipboardModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

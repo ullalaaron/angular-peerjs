@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Call Info</h1>
 <div mat-dialog-content>
-  <mat-form-field>
+  <mat-form-field [cdkCopyToClipboard]="data.peerId" (click)="showCopiedSnackBar()">
     <mat-label>{{ data.isEditMode ? 'INSERT REMOTE ID' : 'CLICK TO COPY YOUR ID' }}</mat-label>
     <input [disabled]="!data.isEditMode" matInput [(ngModel)]="data.peerId">
   </mat-form-field>
