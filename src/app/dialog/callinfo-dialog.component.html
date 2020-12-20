@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Call Info</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>{{ data.isEditMode ? 'INSERT REMOTE ID' : 'CLICK TO COPY YOUR ID' }}</mat-label>
+    <input [disabled]="!data.isEditMode" matInput [(ngModel)]="data.peerId">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button [mat-dialog-close]="data.peerId">Ok</button>
+</div>
