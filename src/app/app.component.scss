@@ -1,9 +1,6 @@
 .video-wrapper {
-	width: 80%;
-	height: 80%;
 	text-align: center;
     background-color: #343434;
-    margin: 0 auto;
 	border-radius: 4px;
 }
 
@@ -16,8 +13,8 @@
 .local-video {
     z-index: 1;
     position: absolute;
-    right: 20rem;
-	bottom: 10rem;
+    right: 2rem;
+	bottom: 2rem;
 	width: 10rem;
 	height: 10rem;
 	border: 3px solid white;
