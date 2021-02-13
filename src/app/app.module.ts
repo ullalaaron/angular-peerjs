@@ -12,6 +12,7 @@ import { MatInputModule } from "@angular/material/input"
 import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CallService } from './call.service';
 
 
 @NgModule({
@@ -31,7 +32,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     ClipboardModule,
     MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    CallService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
