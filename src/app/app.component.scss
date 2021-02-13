@@ -13,10 +13,12 @@
 .local-video {
     z-index: 1;
     position: absolute;
-    right: 2rem;
-	bottom: 2rem;
-	width: 10rem;
-	height: 10rem;
+    right: 1.5rem;
+	bottom: 1rem;
+	width: 10%;
+	height: 15%;
+	max-width: 10rem;
+	max-height: 10rem;
 	border: 3px solid white;
 	border-radius: 4px;
 }
