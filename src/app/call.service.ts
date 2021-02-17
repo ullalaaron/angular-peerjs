@@ -83,24 +83,31 @@ export class CallService {
     }
 
     public async enableCallAnswer() {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
-        this.localStreamBs.next(stream);
-        this.peer.on('call', async (call) => {
-
-            this.mediaCall = call;
-            this.isCallStartedBs.next(true);
-
-            this.mediaCall.answer(stream);
-            this.mediaCall.on('stream', (remoteStream) => {
-                this.remoteStreamBs.next(remoteStream);
-            });
-            this.mediaCall.on('error', err => {
-                this.snackBar.open(err, 'Close');
-                this.isCallStartedBs.next(false);
-                console.error(err);
-            });
-            this.mediaCall.on('close', () => this.onCallClose());
-        })
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+            this.localStreamBs.next(stream);
+            this.peer.on('call', async (call) => {
+    
+                this.mediaCall = call;
+                this.isCallStartedBs.next(true);
+    
+                this.mediaCall.answer(stream);
+                this.mediaCall.on('stream', (remoteStream) => {
+                    this.remoteStreamBs.next(remoteStream);
+                });
+                this.mediaCall.on('error', err => {
+                    this.snackBar.open(err, 'Close');
+                    this.isCallStartedBs.next(false);
+                    console.error(err);
+                });
+                this.mediaCall.on('close', () => this.onCallClose());
+            });            
+        }
+        catch (ex) {
+            console.error(ex);
+            this.snackBar.open(ex, 'Close');
+            this.isCallStartedBs.next(false);            
+        }
     }
 
     private onCallClose() {
