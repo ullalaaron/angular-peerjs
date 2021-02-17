@@ -83,11 +83,11 @@ export class CallService {
     }
 
     public async enableCallAnswer() {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        this.localStreamBs.next(stream);
         this.peer.on('call', async (call) => {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
 
             this.mediaCall = call;
-            this.localStreamBs.next(stream);
             this.isCallStartedBs.next(true);
 
             this.mediaCall.answer(stream);
