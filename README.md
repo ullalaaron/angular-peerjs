@@ -8,10 +8,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Checkout each branch for a step by step process :)
 
-01-angular-init
-02-ng-material
-03-add-bootstrap
-04-ui
-05-dialog
-06-copy-to-clipboard
-07-call-service
+ - 01-angular-init
+ - 02-ng-material
+ - 03-add-bootstrap
+ - 04-ui
+ - 05-dialog
+ - 06-copy-to-clipboard
+ - 07-call-service
