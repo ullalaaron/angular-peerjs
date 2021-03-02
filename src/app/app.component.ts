@@ -35,8 +35,8 @@ export class AppComponent implements OnInit, OnDestroy {
     this.callService.destroyPeer();
   }
 
-  public showModal(startCall: boolean): void {
-    let dialogData: DialogData = startCall ? ({ peerId: this.peerId, isEditMode: false }) : ({ peerId: null, isEditMode: true });
+  public showModal(joinCall: boolean): void {
+    let dialogData: DialogData = joinCall ? ({ peerId: null, joinCall: true }) : ({ peerId: this.peerId, joinCall: false });
     const dialogRef = this.dialog.open(CallInfoDialogComponents, {
       width: '250px',
       data: dialogData
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed()
       .pipe(
         switchMap(peerId => 
-          startCall ? of(this.callService.enableCallAnswer()) : of(this.callService.establishMediaCall(peerId))
+          joinCall ? of(this.callService.establishMediaCall(peerId)) : of(this.callService.enableCallAnswer())
         ),
       )
       .subscribe(_  => { });

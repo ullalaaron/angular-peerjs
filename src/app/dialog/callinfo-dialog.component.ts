@@ -26,5 +26,5 @@ export class CallInfoDialogComponents {
 
 export interface DialogData {
     peerId?: string;
-    isEditMode: boolean
+    joinCall: boolean
 }
