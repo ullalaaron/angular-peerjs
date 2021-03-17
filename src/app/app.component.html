@@ -1,14 +1,14 @@
 <div class="container-fluid">
-  <div class="row p-2" id="control-panel">
-    <button mat-raised-button color="primary" class="m-2" [disabled]="isCallStarted$ | async" (click)="showModal(true)">Start Call</button>
-    <button mat-raised-button class="m-2" [disabled]="isCallStarted$ | async" (click)="showModal(false)">Join Call</button>
+  <div class="row p-2">
+    <button mat-raised-button color="primary" class="m-2" [disabled]="isCallStarted$ | async" (click)="showModal(false)">Start Call</button>
+    <button mat-raised-button class="m-2" [disabled]="isCallStarted$ | async" (click)="showModal(true)">Join Call</button>
     <button mat-raised-button color="warn" class="m-2" [disabled]="!(isCallStarted$ | async)" (click)="endCall()">End Call</button>
   </div>
   <div class="row">
     <div class="col text-center">
-      <div class="video-wrapper">
-        <video #remoteVideo class="remote-video" poster="./assets/video-placeholder.jpg" autoplay playsinline></video>
-        <video #localVideo class="local-video" autoplay playsinline [muted]=true></video>
+      <div id="video-wrapper">
+        <video #remoteVideo id="remote-video" poster="./assets/video-placeholder.jpg" autoplay playsinline></video>
+        <video #localVideo id="local-video" autoplay playsinline [muted]=true></video>
       </div>
     </div>
   </div>

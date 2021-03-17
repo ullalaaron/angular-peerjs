@@ -1,22 +1,22 @@
-.video-wrapper {
+#video-wrapper {
 	text-align: center;
     background-color: #343434;
 	border-radius: 4px;
 }
 
-.remote-video {
+#remote-video {
 	max-width: 100%;
 	max-height: 90vh;
 	border-radius: 4px;
 }
 
-.local-video {
+#local-video {
     z-index: 1;
     position: absolute;
     right: 1.5rem;
-	bottom: 1rem;
-	width: 20%;
-	height: 35%;
+	bottom: 1.5rem;
+	width: 10vw;
+	height: 10vw;
 	max-width: 10rem;
 	max-height: 10rem;
 	border: 3px solid white;
